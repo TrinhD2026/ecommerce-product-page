@@ -1,0 +1,34 @@
+.menu-container{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+}
+
+.btn-close{
+    margin: 1rem;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.btn-close:hover, .btn-close:focus{
+    transform: scale(1.1);
+}
+
+.menu-container-content {
+    width: 60%;
+    background-color: var(--light-grayish-blue);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media screen and (width >= 860px) {
+    .main-modal{
+        display: none;
+    }
+}
