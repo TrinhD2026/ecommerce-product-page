@@ -1,17 +1,32 @@
-import {useState} from 'react';
+import {useState, useRef} from 'react';
 import './App.css';
 import Menu from './components/Menu.jsx';
 import ModalMenu from './components/ModalMenu.jsx';
 import CartButton from './components/CartButton.jsx';
+import SlidesShow from './components/SlidesShow.jsx';
+import QuantityUpdate from './components/QuantityUpdate.jsx';
 
 function App() {
     const [addedCount,setAddedCount]=useState(0);
     const [selectedCount,setSelectedCount]=useState(0);
+
     function showCart(e) {
         e.preventDefault();
     }
+
     function addProduct(e) {
         e.preventDefault();
+        setAddedCount(selectedCount);
+    }
+
+    function changeQuantity(num) {
+        const newCount=selectedCount+num;
+        if(newCount<=0) {
+            setSelectedCount(0);
+        }
+        else {
+            setSelectedCount(newCount);
+        }
     }
 
     return (
@@ -24,22 +39,23 @@ function App() {
                 <button type="button" onClick={showCart}><img src="/image-avatar.png" alt="user avatar" /></button>
             </div>
             <div className="product-container">
-                Sneaker Company
+                <SlidesShow />
 
-                Fall Limited Edition Sneakers
-
-                These low-profile sneakers are your perfect casual wear companion. Featuring a
-                durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-                $125.00
-                50%
-                $250.00
-
-                0
-                <button type="button" onClick={addProduct}>
-                    <img src="/icon-cart.svg" alt="cart icon"/>
-                    Add to cart
-                </button>
+                <div className="add-product-container">
+                    <h2>Sneaker Company</h2>
+                    <h3>Fall Limited Edition Sneakers</h3>
+                    <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they will withstand everything the weather can offer.</p>
+                    <div>
+                        <p className="current-price">$125.00</p>
+                        <p className="discount-percent">50%</p>
+                        <p className="old-price">$250.00</p>
+                    </div>
+                    <QuantityUpdate selectedCount={selectedCount} changeQuantity={changeQuantity} />
+                    <button type="button" onClick={addProduct}>
+                        <img src="/icon-cart.svg" alt="cart icon" />
+                        Add to cart
+                    </button>
+                </div>
             </div>
             
         </>

@@ -28,4 +28,11 @@ body {
     min-height: 100vh;
     font-family: 'Kumbh Sans', sans-serif;
     color: var(--neutral-0);
+    
+    display: flex;
+    justify-content: center;
+}
+
+#root{
+    max-width: 40rem;
 }
