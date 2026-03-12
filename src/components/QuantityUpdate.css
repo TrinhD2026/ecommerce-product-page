@@ -1,0 +1,12 @@
+.update-quantity-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 0.5rem 1rem;
+    height: 3rem;
+    background-color: var(--light-grayish-blue);
+    border-radius: 0.5rem;
+}
+.update-quantity-container .selected-count{
+    font-weight: 600;
+}

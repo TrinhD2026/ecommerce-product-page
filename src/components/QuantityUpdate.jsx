@@ -15,7 +15,7 @@ function QuantityUpdate({selectedCount,changeQuantity}) {
             }}>
                 <img src="/icon-minus.svg" alt="icon minus" className="plus-minus-img" />
             </button>
-            <p>{selectedCount}</p>
+            <p className="selected-count">{selectedCount}</p>
             <button ref={plusBtn} type="button" className="transparent-btn" onClick={(e) => {
                 e.preventDefault();
                 changeQuantity(1);

@@ -3,6 +3,60 @@
     align-items:center;
     gap: 2rem;
 }
+.sub-company-header{
+    font-size: 1.3rem;
+    color: var(--dark-grayish-blue);
+}
+
+.product-name-header{
+    font-size: 2rem;
+}
+.product-description{
+    color: var(--dark-grayish-blue);
+}
+.add-btn{
+    width:100%;
+    height: 3rem;
+    display:flex;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    justify-content:center;
+    align-items:center;
+    gap: 1rem;
+    background-color: var(--orange);
+    border: 0;
+    border-radius: 0.5rem;
+}
+.price-container{
+    display:flex;
+    justify-content:space-between;
+}
+
+.price-container .current-price{
+    font-weight: 700;
+    font-size: 2rem;
+}
+.price-container .discount-percent{
+    background-color: var(--black);
+    color: var(--white);
+    place-content:center;
+    padding: 0.1rem 0.7rem;
+    height: 1.5rem;
+    border-radius: 0.2rem;
+    font-weight: 600;
+}
+.price-container .old-price{
+    color: var(--dark-grayish-blue);
+    font-weight: 600;
+    font-size: 1.3rem;
+    text-decoration: line-through;
+}
+.price-container div{
+    display:flex;
+    gap: 2rem;
+    align-items:flex-end;
+}
 
 @media screen and (width < 860px) {
     .navbar.normal-menu{
