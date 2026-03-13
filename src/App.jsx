@@ -32,11 +32,15 @@ function App() {
     return (
         <>
             <div className="header">
-                <ModalMenu />
-                <h1><img src="/logo.svg" alt="sneakers logo" /></h1>
-                <Menu className="normal-menu" />
-                <CartButton count={addedCount} onCartClick={showCart} />
-                <button className="transparent-btn" type="button" onClick={showCart}><img src="/image-avatar.png" alt="user avatar" /></button>
+                <div className="header-sub">
+                    <ModalMenu />
+                    <h1><img src="/logo.svg" alt="sneakers logo" /></h1>
+                    <Menu className="normal-menu" />
+                </div>
+                <div className="header-sub">
+                    <CartButton count={addedCount} onCartClick={showCart} />
+                    <button className="transparent-btn avatar-btn" type="button" onClick={showCart}><img src="/image-avatar.png" alt="user avatar" /></button>
+                </div>
             </div>
             <div className="product-container">
                 <SlidesShow />

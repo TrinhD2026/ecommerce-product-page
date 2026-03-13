@@ -8,14 +8,14 @@
     z-index: 99;
 }
 
-.btn-close{
-    margin: 1rem;
+.close-btn{
+    margin: 2rem auto 5rem 2rem;
     background-color: transparent;
     border: 0;
     cursor: pointer;
 }
 
-.btn-close:hover, .btn-close:focus{
+.close-btn:hover, .close-btn:focus{
     transform: scale(1.1);
 }
 
@@ -28,7 +28,7 @@
     left: 0;
 }
 
-@media screen and (width >= 860px) {
+@media screen and (width >= 46rem) {
     .main-modal{
         display: none;
     }

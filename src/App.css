@@ -1,18 +1,34 @@
 .header{
     display: flex;
     align-items:center;
+    justify-content: space-between;
+    margin: 1rem 1.5rem;
+}
+.header .header-sub{
+    display: flex;
+    align-items:center;
     gap: 2rem;
 }
+.avatar-btn img{
+    width: 2rem;
+}
+
 .sub-company-header{
     font-size: 1.3rem;
     color: var(--dark-grayish-blue);
+    margin-bottom: 1rem;
 }
 
 .product-name-header{
     font-size: 2rem;
+    margin-bottom: 1rem;
 }
 .product-description{
     color: var(--dark-grayish-blue);
+    margin-bottom: 1rem;
+}
+.add-product-container{
+    margin: 1.5rem;
 }
 .add-btn{
     width:100%;
@@ -27,10 +43,12 @@
     background-color: var(--orange);
     border: 0;
     border-radius: 0.5rem;
+    margin-top: 1rem;
 }
 .price-container{
     display:flex;
     justify-content:space-between;
+    margin-bottom: 1rem;
 }
 
 .price-container .current-price{
@@ -58,7 +76,7 @@
     align-items:flex-end;
 }
 
-@media screen and (width < 860px) {
+@media screen and (width < 46rem) {
     .navbar.normal-menu{
         display: none;
     }

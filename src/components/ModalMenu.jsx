@@ -40,11 +40,11 @@ function ModalMenu() {
 
     return (
         <div className="main-modal">
-            {!isOpen&&<button className="transparent-btn" onClick={() => setIsOpen(!isOpen)}><img src="/icon-menu.svg" alt="icon menu" /></button>}
+            {!isOpen&&<button className="transparent-btn menu-btn" onClick={() => setIsOpen(true)}><img src="/icon-menu.svg" alt="icon menu" /></button>}
             {isOpen&&
             <div className="menu-container" ref={modalRef} >
                 <div className="menu-container-content">
-                        <button className="transparent-btn btn-close" onClick={() => setIsOpen(false)}>
+                        <button className="transparent-btn close-btn" onClick={() => setIsOpen(false)}>
                         <img src='/icon-close.svg' alt="Close menu icon" />
                     </button>
                     <Menu onAnchorClick={() => setIsOpen(false)} className="modal-menu" />
