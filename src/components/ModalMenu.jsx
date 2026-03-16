@@ -42,9 +42,12 @@ function ModalMenu() {
         <div className="main-modal">
             {!isOpen&&<button className="transparent-btn menu-btn" onClick={() => setIsOpen(true)}><img src="/icon-menu.svg" alt="icon menu" /></button>}
             {isOpen&&
-            <div className="menu-container" ref={modalRef} >
-                <div className="menu-container-content">
-                        <button className="transparent-btn close-btn" onClick={() => setIsOpen(false)}>
+            <div className="menu-container" ref={modalRef} onClick={() => setIsOpen(false)}>
+                <div className="menu-container-content" onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }}>
+                    <button className="transparent-btn close-btn" onClick={() => setIsOpen(false)}>
                         <img src='/icon-close.svg' alt="Close menu icon" />
                     </button>
                     <Menu onAnchorClick={() => setIsOpen(false)} className="modal-menu" />

@@ -5,18 +5,37 @@ import ModalMenu from './components/ModalMenu.jsx';
 import CartButton from './components/CartButton.jsx';
 import SlidesShow from './components/SlidesShow.jsx';
 import QuantityUpdate from './components/QuantityUpdate.jsx';
+import Cart from './components/Cart.jsx';
 
 function App() {
     const [addedCount,setAddedCount]=useState(0);
     const [selectedCount,setSelectedCount]=useState(0);
-
+    const [isCartOpen,setIsCartOpen]=useState(false);
+    const addBtn=useRef(null);
+    const avatarBtn=useRef(null);
+    
     function showCart(e) {
         e.preventDefault();
+        setIsCartOpen(!isCartOpen);
+    }
+
+    function clickMainContainer(e) {
+        e.preventDefault();
+        if(isCartOpen) {
+            setIsCartOpen(false);
+        }
     }
 
     function addProduct(e) {
         e.preventDefault();
         setAddedCount(selectedCount);
+        addBtn.current.blur();
+    }
+
+    function removeProduct(e) {
+        e.preventDefault();
+        setAddedCount(0);
+        setSelectedCount(0);
     }
 
     function changeQuantity(num) {
@@ -30,7 +49,7 @@ function App() {
     }
 
     return (
-        <>
+        <div onClick={clickMainContainer}>
             <div className="header">
                 <div className="header-sub">
                     <ModalMenu />
@@ -39,9 +58,19 @@ function App() {
                 </div>
                 <div className="header-sub">
                     <CartButton count={addedCount} onCartClick={showCart} />
-                    <button className="transparent-btn avatar-btn" type="button" onClick={showCart}><img src="/image-avatar.png" alt="user avatar" /></button>
+                    <button ref={avatarBtn} className="transparent-btn avatar-btn" type="button" onClick={(e) => {
+                        showCart(e);
+                        avatarBtn.current.blur();
+                    }}><img src="/image-avatar.png" alt="user avatar" /></button>
                 </div>
             </div>
+            <Cart isOpen={isCartOpen}
+                singlePrice={125}
+                quantity={addedCount}
+                productImg="/image-product-1-thumbnail.jpg"
+                productName="Fall Limited Edition Sneakers"
+                clearCart={removeProduct} />
+
             <div className="product-container">
                 <SlidesShow />
 
@@ -57,14 +86,14 @@ function App() {
                         <p className="old-price">$250.00</p>
                     </div>
                     <QuantityUpdate selectedCount={selectedCount} changeQuantity={changeQuantity} />
-                    <button className="add-btn" type="button" onClick={addProduct}>
+                    <button ref={addBtn} className="wide-btn" type="button" onClick={addProduct}>
                         <img src="/icon-cart.svg" alt="cart icon" />
                         Add to cart
                     </button>
                 </div>
             </div>
             
-        </>
+        </div>
     )
 }
 
