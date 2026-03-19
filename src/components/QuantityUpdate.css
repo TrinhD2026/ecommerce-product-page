@@ -6,6 +6,7 @@
     height: 3rem;
     background-color: var(--light-grayish-blue);
     border-radius: 0.5rem;
+    width:100%;
 }
 .update-quantity-container .selected-count{
     font-weight: 600;

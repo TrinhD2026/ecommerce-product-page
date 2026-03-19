@@ -53,6 +53,11 @@ button:active{
 }
 
 #root{
-    max-width: 46rem;
     position:relative;
+}
+
+@media screen and (width > 50rem) {
+    #root{
+        max-width: 80rem;
+    }
 }

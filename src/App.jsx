@@ -49,14 +49,14 @@ function App() {
     }
 
     return (
-        <div onClick={clickMainContainer}>
+        <div className="main-container" onClick={clickMainContainer}>
             <div className="header">
-                <div className="header-sub">
+                <div className="header-sub-1">
                     <ModalMenu />
                     <h1><img src="/logo.svg" alt="sneakers logo" /></h1>
                     <Menu className="normal-menu" />
                 </div>
-                <div className="header-sub">
+                <div className="header-sub-2">
                     <CartButton count={addedCount} onCartClick={showCart} />
                     <button ref={avatarBtn} className="transparent-btn avatar-btn" type="button" onClick={(e) => {
                         showCart(e);
@@ -70,10 +70,9 @@ function App() {
                 productImg="/image-product-1-thumbnail.jpg"
                 productName="Fall Limited Edition Sneakers"
                 clearCart={removeProduct} />
-
+            <div className="divider"></div>
             <div className="product-container">
                 <SlidesShow />
-
                 <div className="add-product-container">
                     <h2 className="sub-company-header">Sneaker Company</h2>
                     <h3 className="product-name-header">Fall Limited Edition Sneakers</h3>
@@ -85,14 +84,15 @@ function App() {
                         </div>
                         <p className="old-price">$250.00</p>
                     </div>
-                    <QuantityUpdate selectedCount={selectedCount} changeQuantity={changeQuantity} />
-                    <button ref={addBtn} className="wide-btn" type="button" onClick={addProduct}>
-                        <img src="/icon-cart.svg" alt="cart icon" />
-                        Add to cart
-                    </button>
+                    <div className="add-quantity-container">
+                        <QuantityUpdate selectedCount={selectedCount} changeQuantity={changeQuantity} />
+                        <button ref={addBtn} className="wide-btn add-btn" type="button" onClick={addProduct}>
+                            <img src="/icon-cart.svg" alt="cart icon" />
+                            Add to cart
+                        </button>
+                    </div>
                 </div>
             </div>
-            
         </div>
     )
 }

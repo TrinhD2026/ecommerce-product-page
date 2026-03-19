@@ -1,4 +1,5 @@
-.menu-container{
+.slides-container{
+    display:none;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.5);
     top: 0;
@@ -19,17 +20,16 @@
     transform: scale(1.1);
 }
 
-.menu-container-content {
-    width: 60%;
-    background-color: var(--light-grayish-blue);
-    height: 100%;
+.slides-container-content {
+    width: 40rem;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 @media screen and (width > 50rem) {
-    .main-modal{
-        display: none;
+    .slides-container{
+        display: inherit;
     }
 }

@@ -34,3 +34,45 @@
 .mySlides{
     max-width: 100%;
 }
+
+.thumbnail-container{
+    display:none;
+}
+.thumbnail.selected{
+    opacity: 0.7;
+}
+
+.thumbnail.selected img{
+    border: 0.15rem solid var(--orange);
+}
+
+@media screen and (width > 50rem) {
+
+    .slides-shower{
+        max-width:40rem;
+        padding:0;
+    }
+
+    .mySlides{
+        width:100%;
+        border-radius: 0.5rem;
+    }
+    .prev, .next {
+        display:none;
+    }
+    
+    .thumbnail-container{
+        display:flex;
+        width:100%;
+        justify-content:space-between;
+        margin-top: 1rem;
+    }
+
+    .thumbnail-container .thumbnail{
+        width: 20%;
+    }
+    .thumbnail-container .thumbnail img{
+        width: 100%;
+        border-radius: 0.5rem;
+    }
+}

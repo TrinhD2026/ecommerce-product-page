@@ -1,7 +1,7 @@
 .cart__main-container{
     width: 24rem;
     position: absolute;
-    top: 5rem;
+    top: 6rem;
     right: 1rem;
     z-index: 3;
     border-radius: 0.5rem;
@@ -51,4 +51,9 @@
 .cart__total-price{
     color: var(--black);
     font-weight:700;
+}
+
+@media screen and (width > 50rem) {
+    .cart__main-container{
+    }
 }
