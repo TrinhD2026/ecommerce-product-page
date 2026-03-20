@@ -9,6 +9,7 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
+  - [Continued development](#continued-development)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -42,3 +43,7 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 - [Styled Components](https://styled-components.com/) - For styles
 - Cloudflare server for hosting live site.
+
+
+### Continued development
+- Need to do some refactoring in the future to clean up codes. 

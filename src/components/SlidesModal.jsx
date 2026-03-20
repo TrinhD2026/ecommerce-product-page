@@ -9,6 +9,7 @@ function SlidesModal({isOpen,setIsOpen}) {
 
     const prevBtn=useRef(null);
     const nextBtn=useRef(null);
+
     function changeSlides(num) {
 
         const newIndex=slideIndex+num;
@@ -62,7 +63,7 @@ function SlidesModal({isOpen,setIsOpen}) {
                 e.preventDefault();
                 e.stopPropagation();
             }}>
-                <button className="transparent-btn close-btn" onClick={() => setIsOpen(false)}>
+                <button className="transparent-btn modal-close-btn" onClick={() => setIsOpen(false)}>
                     <img src='/icon-close-white.svg' alt="Close menu icon" />
                 </button>
                     <div className="modalSlides-shower">
@@ -77,7 +78,7 @@ function SlidesModal({isOpen,setIsOpen}) {
                     </div>
 
                     <div className="modal-thumbnail-container">
-                        <button className={`transparent-btn thumbnail ${slideIndex===0? "selected":""}`} onClick={() => setSlideIndex(0)}><img src="/image-product-1-thumbnail.jpg" alt="product thumbnail 1" /></button>
+                        <button autoFocus={true} className={`transparent-btn thumbnail ${slideIndex===0? "selected":""}`} onClick={() => setSlideIndex(0)}><img src="/image-product-1-thumbnail.jpg" alt="product thumbnail 1" /></button>
                         <button className={`transparent-btn thumbnail ${slideIndex===1? "selected":""}`} onClick={() => setSlideIndex(1)}><img src="/image-product-2-thumbnail.jpg" alt="product thumbnail 2" /></button>
                         <button className={`transparent-btn thumbnail ${slideIndex===2? "selected":""}`} onClick={() => setSlideIndex(2)}><img src="/image-product-3-thumbnail.jpg" alt="product thumbnail 3" /></button>
                         <button className={`transparent-btn thumbnail ${slideIndex===3? "selected":""}`} onClick={() => setSlideIndex(3)}><img src="/image-product-4-thumbnail.jpg" alt="product thumbnail 4" /></button>

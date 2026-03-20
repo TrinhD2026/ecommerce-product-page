@@ -9,7 +9,7 @@
     z-index: 99;
 }
 
-.close-btn{
+.modal-close-btn{
     position: absolute;
     top: -4rem;
     right: 1rem;
@@ -18,7 +18,7 @@
     cursor: pointer;
 }
 
-.close-btn:hover, .close-btn:focus{
+.modal-close-btn:hover, .modal-close-btn:focus{
     transform: scale(1.1);
 }
 
