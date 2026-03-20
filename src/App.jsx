@@ -64,6 +64,7 @@ function App() {
                     }}><img src="/image-avatar.png" alt="user avatar" /></button>
                 </div>
             </div>
+
             <Cart isOpen={isCartOpen}
                 singlePrice={125}
                 quantity={addedCount}

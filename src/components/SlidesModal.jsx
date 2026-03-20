@@ -57,35 +57,37 @@ function SlidesModal({isOpen,setIsOpen}) {
 
     return (
         isOpen&&
-        <div className="slides-container" ref={modalRef}>
-            <div className="slides-container-content" onClick={(e) => {
+        <div className="modal-slides-container" ref={modalRef}>
+            <div className="modal-slides-content" onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
             }}>
                 <button className="transparent-btn close-btn" onClick={() => setIsOpen(false)}>
                     <img src='/icon-close-white.svg' alt="Close menu icon" />
                 </button>
-                    <div className="slides-shower">
-                            {slideIndex===0&&<img className="mySlides fade" src="image-product-1.jpg" alt="image product 1" />}
+                    <div className="modalSlides-shower">
+                            {slideIndex===0&&<img className="modalSlides" src="image-product-1.jpg" alt="image product 1" />}
 
-                            {slideIndex===1&&<img className="mySlides fade" src="image-product-2.jpg" alt="image product 2" />}
+                            {slideIndex===1&&<img className="modalSlides" src="image-product-2.jpg" alt="image product 2" />}
 
-                            {slideIndex===2&&<img className="mySlides fade" src="image-product-3.jpg" alt="image product 3" />}
+                            {slideIndex===2&&<img className="modalSlides" src="image-product-3.jpg" alt="image product 3" />}
 
-                            {slideIndex===3&&<img className="mySlides fade" src="image-product-4.jpg" alt="image product 4" />}
+                            {slideIndex===3&&<img className="modalSlides" src="image-product-4.jpg" alt="image product 4" />}
 
-                        <div className="thumbnail-container">
-                            <button className={`transparent-btn thumbnail ${slideIndex===0? "selected":""}`} onClick={() => setSlideIndex(0)}><img src="/image-product-1-thumbnail.jpg" alt="product thumbnail 1" /></button>
-                            <button className={`transparent-btn thumbnail ${slideIndex===1? "selected":""}`} onClick={() => setSlideIndex(1)}><img src="/image-product-2-thumbnail.jpg" alt="product thumbnail 2" /></button>
-                            <button className={`transparent-btn thumbnail ${slideIndex===2? "selected":""}`} onClick={() => setSlideIndex(2)}><img src="/image-product-3-thumbnail.jpg" alt="product thumbnail 3" /></button>
-                            <button className={`transparent-btn thumbnail ${slideIndex===3? "selected":""}`} onClick={() => setSlideIndex(3)}><img src="/image-product-4-thumbnail.jpg" alt="product thumbnail 4" /></button>
-                        </div>
                     </div>
-                    <button ref={prevBtn} className="round-btn prev" onClick={() => {
+
+                    <div className="modal-thumbnail-container">
+                        <button className={`transparent-btn thumbnail ${slideIndex===0? "selected":""}`} onClick={() => setSlideIndex(0)}><img src="/image-product-1-thumbnail.jpg" alt="product thumbnail 1" /></button>
+                        <button className={`transparent-btn thumbnail ${slideIndex===1? "selected":""}`} onClick={() => setSlideIndex(1)}><img src="/image-product-2-thumbnail.jpg" alt="product thumbnail 2" /></button>
+                        <button className={`transparent-btn thumbnail ${slideIndex===2? "selected":""}`} onClick={() => setSlideIndex(2)}><img src="/image-product-3-thumbnail.jpg" alt="product thumbnail 3" /></button>
+                        <button className={`transparent-btn thumbnail ${slideIndex===3? "selected":""}`} onClick={() => setSlideIndex(3)}><img src="/image-product-4-thumbnail.jpg" alt="product thumbnail 4" /></button>
+                    </div>
+
+                    <button ref={prevBtn} className="round-btn modalPrev" onClick={() => {
                         changeSlides(-1);
                         prevBtn.current.blur();
                     }}><img src="/icon-previous.svg" alt="icon previous" /></button>
-                    <button ref={nextBtn} className="round-btn next" onClick={() => {
+                    <button ref={nextBtn} className="round-btn modalNext" onClick={() => {
                         changeSlides(1);
                         nextBtn.current.blur();
                     }}><img src="/icon-next.svg" alt="icon next" /></button>

@@ -9,6 +9,7 @@ function SlidesShow() {
     const [isSlidesModal,setIsSlidesModal]=useState(false);
     const prevBtn=useRef(null);
     const nextBtn=useRef(null);
+    const slidesBtn=useRef(null);
 
     function changeSlides(num) {
 
@@ -26,20 +27,27 @@ function SlidesShow() {
 
     function openSlidesModal(e) {
         e.preventDefault();
+
+        if(window.innerWidth<=720) {
+            return;
+        }
         setIsSlidesModal(true);
     }
 
     return (
         <div className="slideshow-container">
             <div className="slides-shower">
-                <button type="button" className="transparent-btn" onClick={openSlidesModal}>
-                    {slideIndex===0&&<img className="mySlides fade" src="image-product-1.jpg" alt="image product 1" />}
+                <button ref={slidesBtn} type="button" className="transparent-btn slide-btn" onClick={(e) => {
+                    openSlidesModal(e);
+                    slidesBtn.current.blur();
+                }}>
+                    {slideIndex===0&&<img className="mySlides" src="image-product-1.jpg" alt="image product 1" />}
 
-                    {slideIndex===1&&<img className="mySlides fade" src="image-product-2.jpg" alt="image product 2" />}
+                    {slideIndex===1&&<img className="mySlides" src="image-product-2.jpg" alt="image product 2" />}
 
-                    {slideIndex===2&&<img className="mySlides fade" src="image-product-3.jpg" alt="image product 3" />}
+                    {slideIndex===2&&<img className="mySlides" src="image-product-3.jpg" alt="image product 3" />}
 
-                    {slideIndex===3&&<img className="mySlides fade" src="image-product-4.jpg" alt="image product 4" />}
+                    {slideIndex===3&&<img className="mySlides" src="image-product-4.jpg" alt="image product 4" />}
                 </button>
                 
                 <div className="thumbnail-container">
@@ -49,6 +57,7 @@ function SlidesShow() {
                     <button className={`transparent-btn thumbnail ${slideIndex===3? "selected":""}`} onClick={() => setSlideIndex(3)}><img src="/image-product-4-thumbnail.jpg" alt="product thumbnail 4" /></button>
                 </div>
             </div>
+
             <SlidesModal isOpen={isSlidesModal}
                 setIsOpen={setIsSlidesModal} />
             <button ref={prevBtn} className="round-btn prev" onClick={() => {

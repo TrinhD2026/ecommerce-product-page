@@ -1,4 +1,4 @@
-.slides-container{
+.modal-slides-container{
     display:none;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.5);
@@ -10,7 +10,9 @@
 }
 
 .close-btn{
-    margin: 2rem auto 5rem 2rem;
+    position: absolute;
+    top: -4rem;
+    right: 1rem;
     background-color: transparent;
     border: 0;
     cursor: pointer;
@@ -20,16 +22,66 @@
     transform: scale(1.1);
 }
 
-.slides-container-content {
-    width: 40rem;
+.modalSlides-shower{
+
+}
+
+.modal-slides-content {
+    width: 35rem;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-60%);
 }
 
-@media screen and (width > 50rem) {
-    .slides-container{
+/* Next & previous buttons */
+.modalPrev, .modalNext {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /*user-select: none;*/
+}
+
+/* Position the "next button" to the right */
+.modalPrev {
+  left: 0;
+}
+/* Position the "next button" to the right */
+.modalNext {
+  right: 0;
+}
+
+.modalSlides-shower{
+    max-width:35rem;
+    padding:1rem;
+}
+
+.modalSlides{
+    width:100%;
+    border-radius: 0.5rem;
+}
+    
+.modal-thumbnail-container{
+    position: absolute;
+    display:flex;
+    width:100%;
+    justify-content:space-between;
+    margin-top: 1rem;
+    padding: 0 3rem;    
+}
+
+.modal-thumbnail-container .thumbnail{
+    width: 20%;
+}
+
+.modal-thumbnail-container .thumbnail img{
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+@media screen and (width > 45rem) {
+    .modal-slides-container{
         display: inherit;
     }
 }

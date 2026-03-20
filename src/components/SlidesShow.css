@@ -3,6 +3,7 @@
   max-width: 100%;
   margin: 0 auto;
 }
+
 .round-btn{
     width: 2.5rem;
     height: 2.5rem;
@@ -38,6 +39,7 @@
 .thumbnail-container{
     display:none;
 }
+
 .thumbnail.selected{
     opacity: 0.7;
 }
@@ -46,7 +48,7 @@
     border: 0.15rem solid var(--orange);
 }
 
-@media screen and (width > 50rem) {
+@media screen and (width > 45rem) {
 
     .slides-shower{
         max-width:40rem;
@@ -57,6 +59,7 @@
         width:100%;
         border-radius: 0.5rem;
     }
+
     .prev, .next {
         display:none;
     }

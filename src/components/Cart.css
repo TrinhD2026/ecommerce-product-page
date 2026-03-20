@@ -53,7 +53,7 @@
     font-weight:700;
 }
 
-@media screen and (width > 50rem) {
+@media screen and (width > 45rem) {
     .cart__main-container{
     }
 }

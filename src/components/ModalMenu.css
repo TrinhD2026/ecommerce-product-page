@@ -28,7 +28,7 @@
     left: 0;
 }
 
-@media screen and (width > 50rem) {
+@media screen and (width > 45rem) {
     .main-modal{
         display: none;
     }
